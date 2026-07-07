@@ -15,8 +15,8 @@ public static class ModLocale
         SetRunSettingText("geyser_multiplier", "Geyser Multiplier", "The amount of geysers to spawn.");
         SetRunSettingText("plant_multiplier", "Plant Multiplier", "The amount of plants to spawn (glowplants, stoneplants, etc.).");
         SetRunSettingText("fluid_multiplier", "Fluid Multiplier", "The amount of fluid to place in each pool.");
-        SetRunSettingText("spawn_random_loot", "Spawn Random Loot", "Spawns random items around each layer.");
-        SetRunSettingText("random_loot_multiplier", "Random Loot Multiplier", "The amount of random items to spawn (only active if Spawn Random Loot is active).");
+        SetRunSettingText("spawn_random_loot", "Spawn Extra Random Loot", "Spawns random items around each layer.");
+        SetRunSettingText("random_loot_multiplier", "Extra Random Loot Multiplier", "The amount of random items to spawn (only active if Spawn Extra Random Loot is active).");
         SetRunSettingText("climbable_multiplier", "Climbable Multiplier", "The amount of climbable objects (rope, sandvine) to spawn.");
     }
 }

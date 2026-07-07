@@ -25,6 +25,8 @@ internal static class WorldGenerationPatch
         "brownshroom"
     ];
 
+    private static List<string> categories = ["medical", "drug", "food", "water", "tool", "utility", "container", "trash"];
+
     [HarmonyPatch(nameof(WorldGeneration.DistributeEntities))]
     [HarmonyPrefix]
     private static void DistributeEntities(GameObject basObj,
@@ -92,8 +94,8 @@ internal static class WorldGenerationPatch
                 Physics2D.Raycast(vector, Vector2.down, WorldGeneration.CHUNKSIZE, LayerMask.GetMask("Ground"));
             if (raycastHit2D)
             {
-                var pools = ItemLootPool.pool.Keys.Where(x => x != "custom").ToArray();
-                var pool = ItemLootPool.pool[pools[Random.Range(0, pools.Length)]];
+                var pool = ItemLootPool.pool[categories[Random.Range(0, categories.Count)]];
+                if (pool == null) continue;
                 var item = Resources.Load(pool[Random.Range(0, pool.Count)]);
 
                 Plugin.Logger.LogInfo($"GOT HERE {item.name}");
